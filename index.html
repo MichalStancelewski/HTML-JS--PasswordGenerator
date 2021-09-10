@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<html lang="en">
+	<title>Password Generator</title>
+	<meta name="robots" content="noindex" />
+	<meta charset="UTF-8">
+	<link rel="icon" type="image/png" href="./img/_icon.png"/>
+	<meta name="description" content="Generate strong random passwords to use anywhere." />
+	<meta name="author" content="Michał Stancelewski" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<script type="text/javascript" src="./js/password-generator.js"></script>
+</head>
+
+<body>
+<div id="page-container" class="">
+	<header>
+		<div id="top-bar" class="">
+		</div>
+			
+		<div id="title-bar" class="">
+			<h1>Password Generator</h1>
+		</div>
+	</header>
+	<div class="main" >
+		<div class="main-left-column" >
+			<h2>What kind of password you want to generate?</h2>
+			<div id="numberOfChars-input" class="form-element">
+				<label for="numberOfChars">Number of characters:</label>
+				<br/>
+				<input type="number" id="numberOfChars" min=6 max=30 step=1/> 
+				<i class="fas fa-info-circle tooltip">
+					<span class="tooltiptext">Enter number between 6 and 30</span>
+				</i>
+			</div>
+			
+			<div id="includeNumbers-input" class="form-element">
+				<label for="includeNumbers" >Include digits?</label>
+				<input type="checkbox" id="includeNumbers" checked /> 
+				<i class="fas fa-info-circle tooltip">
+					<span class="tooltiptext">It is strongly advised to use digits in every password</span>
+				</i>
+			</div>
+			
+			<div id="includeSpecial-input" class="form-element">
+			<label for="includeSpecial" >Include special characters?</label>
+			<input type="checkbox" id="includeSpecial" checked />
+				<i class="fas fa-info-circle tooltip">
+					<span class="tooltiptext">It is advised to use special characters in most passwords</span>
+				</i>
+			</div>
+			
+			<div id="howMany-input" class="form-element">
+			<label for="howMany" >How many passwords?</label>
+			<br/>
+			<select id="howMany">
+				<option value="1">1</option>
+				<option value="3">3</option>
+				<option value="10">10</option>'
+			</select>  
+				<i class="fas fa-info-circle tooltip">
+					<span class="tooltiptext">How many passwords you want to generate by once</span>
+				</i>
+			</div>
+						
+			<br/><button class="generate-button" onclick="sendForm()">Generate</button>
+		</div>
+		<div class="main-right-column" >
+			<h2>Your generated passwords:</h2>
+			<p id="outputArea"></p>
+			<p id="outputMessage"><span style="color:#7a7a7a; font-size: 13px;"><i>use form to generate a new password</i></span></p>
+			
+		</div>
+	</div>
+	<footer>
+		<div id="footer-bar">
+			<p> Made by Michał Stancelewski from <a href="https://stancelewski.pl/">stancelewski.pl</a></p>
+		</div>
+	</footer>
+</div>
+
+</body>
+</html>
